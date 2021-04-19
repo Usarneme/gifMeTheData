@@ -27,44 +27,16 @@ function apiQuery(userSearch) {
   request.send();
 }
 
-// <img src="https://media2.giphy.com/media/Qem49y6xGw57W/giphy.gif" alt="Bo Burnham Pun GIF" style="width: 480px; height: 466.946px; left: 0px; top: 0px; opacity: 0;">
-// data.url:"https://giphy.com/gifs/terrible-pun-Qem49y6xGw57W"
-
 $("#faker").click(() => {
   // console.log(mockDataResponse)
   getElements(mockDataResponse.data)
 })
 
 function getElements(dataArray) {
-  $("#gif-output").html(`<p>${dataArray[0].title}</p><img src="https://media2.giphy.com/media/${dataArray[0].id}/giphy.gif" alt="${dataArray[0].title}">`).show()
-  console.log(dataArray[0].title)
-  console.log(dataArray[0])
+  let html = `<div class="container p-1"><div class="row">`
+  dataArray.forEach(element => {
+    html += `<div class="card col-sm-3 text-center p-2 image-container" id="${element.id}"><img src="https://media2.giphy.com/media/${element.id}/giphy.gif" alt="${element.title}"><p class="text-center p-2">${element.title}</p></div>`
+  })
+  html += `</div></div>`
+  $("#gif-output").html(html).show()
 }
-
-// listen for keyword form submission
-// get the keyword
-// query the giphy api
-// validate the results
-// show the results
-
-// Object.keys(response.data[0])
-// 0: "type"
-// 1: "id"
-// 2: "url"
-// 3: "slug"
-// 4: "bitly_gif_url"
-// 5: "bitly_url"
-// 6: "embed_url"
-// 7: "username"
-// 8: "source"
-// 9: "title"
-// 10: "rating"
-// 11: "content_url"
-// 12: "source_tld"
-// 13: "source_post_url"
-// 14: "is_sticker"
-// 15: "import_datetime"
-// 16: "trending_datetime"
-// 17: "images"
-// 18: "analytics_response_payload"
-// 19: "analytics"
