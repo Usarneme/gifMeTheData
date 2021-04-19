@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <title>TITLE-HTML</title>
+  <title>gifMeTheData!</title>
 </head>
 <body>
   <section class="main">
-
+    <div class="container-fluid">
+      <div class="jumbotron">
+        <h1>Show me the GIFs!!</h1>
+      </div>
+      <div class="container">
+        <form class="form-inline">
+          <div class="form-group row">
+            <label for="giphyKeyword" class="col">Search For GIFs By Keyword:</label>
+            <input type="text" class="form-control col" id="giphyKeyword" placeholder="Search for GIFs!" required>
+          </div>
+          <button type="submit" class="btn btn-outline-info btn-lg btn-block m-2 p-2">Search</button>
+        </form>
+      </div>
+    </div>
   </section>
 </body>
 </html>
