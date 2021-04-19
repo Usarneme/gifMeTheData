@@ -10,15 +10,20 @@
         <h1>Show me the GIFs!!</h1>
       </div>
       <div class="container">
-        <form class="form-inline">
+        <form class="form">
           <div class="form-group row">
-            <label for="giphyKeyword" class="col">Search For GIFs By Keyword:</label>
-            <input type="text" class="form-control col" id="giphyKeyword" placeholder="Search for GIFs!" required>
+            <label for="giphyKeyword" class="col-sm-3 col-form-label">Search By Keyword:</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control col-form-input" id="giphyKeyword" placeholder="Search for GIFs!" required>
+            </div>
           </div>
-          <button type="submit" class="btn btn-outline-info btn-lg btn-block m-2 p-2">Search</button>
+          <div class="container">
+            <button type="submit" class="btn btn-outline-info btn-lg btn-block m-2 p-2">Search</button>
+          </div>
         </form>
       </div>
     </div>
+    <div class="container" id="gif-output"></div>
   </section>
 </body>
 </html>
