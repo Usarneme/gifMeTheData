@@ -17,6 +17,7 @@ function apiQuery(userSearch) {
     const url = `http://api.giphy.com/v1/gifs/search?q=${userSearch}&api_key=${process.env.API_KEY}&rating=pg-13`;
     request.onload = function() {
       if (this.status === 200) {
+        console.log(request)
         resolve(JSON.parse(request.responseText));
       } else {
         reject(JSON.parse(request.response));
@@ -27,10 +28,16 @@ function apiQuery(userSearch) {
   });
 
   promise.then(function(response) {
+    // success! handle data...
     formatAndDisplay(response.data);
+  }, function(response) {
+    // this means it was failed/rejected...
+    console.error("ERROR RETRIEVING GIPHY DATA:")
+    console.log(response)
   });
 }
 
+// CALLBACK VERSION:
 // const apiQuery = (userSearch) => {
 //   let request = new XMLHttpRequest();
 //   const url = `http://api.giphy.com/v1/gifs/search?q=${userSearch}&api_key=${process.env.API_KEY}&rating=pg-13`;
